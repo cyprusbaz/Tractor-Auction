@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionServer.API", "AuctionServer.API\AuctionServer.API.csproj", "{19EFA62E-18D5-4633-9624-BD88D55E2B73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionServer.Application", "AuctionServer.Application\AuctionServer.Application.csproj", "{02F43443-A90D-4086-8958-659CDCFE3F51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionServer.Domain", "AuctionServer.Domain\AuctionServer.Domain.csproj", "{98CB3920-A602-4E13-BF78-5008309A5C95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionServer.Infrastructure", "AuctionServer.Infrastructure\AuctionServer.Infrastructure.csproj", "{624308E0-6B93-4A1B-B19C-F9A51041C21A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19EFA62E-18D5-4633-9624-BD88D55E2B73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19EFA62E-18D5-4633-9624-BD88D55E2B73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19EFA62E-18D5-4633-9624-BD88D55E2B73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19EFA62E-18D5-4633-9624-BD88D55E2B73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02F43443-A90D-4086-8958-659CDCFE3F51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F43443-A90D-4086-8958-659CDCFE3F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F43443-A90D-4086-8958-659CDCFE3F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F43443-A90D-4086-8958-659CDCFE3F51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98CB3920-A602-4E13-BF78-5008309A5C95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98CB3920-A602-4E13-BF78-5008309A5C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98CB3920-A602-4E13-BF78-5008309A5C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98CB3920-A602-4E13-BF78-5008309A5C95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{624308E0-6B93-4A1B-B19C-F9A51041C21A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{624308E0-6B93-4A1B-B19C-F9A51041C21A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{624308E0-6B93-4A1B-B19C-F9A51041C21A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{624308E0-6B93-4A1B-B19C-F9A51041C21A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
