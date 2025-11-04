@@ -9,11 +9,11 @@ public class AuctionDbContext : DbContext
     {
     }
     
-    DbSet<User> Users { get; set; }
-    DbSet<AuctionListing> AuctionListings { get; set; }
-    DbSet<AuctionItem> AuctionItems { get; set; }
-    DbSet<Bid> Bids { get; set; }
-    DbSet<Payment> Payments { get; set; }
+    public DbSet<User> Users { get; set; }
+    public DbSet<AuctionListing> AuctionListings { get; set; }
+    public DbSet<AuctionItem> AuctionItems { get; set; }
+    public DbSet<Bid> Bids { get; set; }
+    public DbSet<Payment> Payments { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

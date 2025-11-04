@@ -7,4 +7,28 @@
         <RootNamespace>AuctionServer.Core</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Commands\AuctionItem\" />
+      <Folder Include="Commands\AuctionListing\" />
+      <Folder Include="Commands\Bid\" />
+      <Folder Include="Commands\Payment\" />
+      <Folder Include="Handlers\AuctionItem\" />
+      <Folder Include="Handlers\Bid\" />
+      <Folder Include="Handlers\Payment\" />
+      <Folder Include="Queries\AuctionItem\" />
+      <Folder Include="Queries\Bid\" />
+      <Folder Include="Queries\Payment\" />
+      <Folder Include="Queries\User\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="13.1.0" />
+      <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AuctionServer.Domain\AuctionServer.Domain.csproj" />
+      <ProjectReference Include="..\AuctionServer.Infrastructure\AuctionServer.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>

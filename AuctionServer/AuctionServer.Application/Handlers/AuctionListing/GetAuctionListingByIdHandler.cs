@@ -1,0 +1,44 @@
+using AuctionServer.Core.Dtos;
+using AuctionServer.Core.Queries.AuctionListing;
+using AuctionServer.Infrastructure;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+
+namespace AuctionServer.Core.Handlers.AuctionListing;
+
+public class GetAuctionListingByIdHandler : IRequestHandler<GetAuctionListingByIdQuery, AuctionListingDto>
+{
+    
+    AuctionDbContext _context;
+
+    public GetAuctionListingByIdHandler(AuctionDbContext context)
+    {
+        _context = context;
+    }
+
+    public async Task<AuctionListingDto> Handle(GetAuctionListingByIdQuery request, CancellationToken cancellationToken)
+    {
+
+        var auction = await _context.AuctionListings.Select(a => new AuctionListingDto
+        {
+            Id = a.Id,
+            Name = a.Name,
+            StartDate = a.StartDate,
+            EndDate = a.EndDate,
+            AuctionItems = _context.AuctionItems.Select(ai => new AuctionItemDto
+            {
+                Brand = ai.Brand,
+                Model = ai.Model,
+                Year = ai.Year,
+                Mileage = ai.Mileage,
+                Color = ai.Color,
+                Engine = ai.Engine,
+                Description = ai.Description,
+                Price = ai.Price,
+                
+            }).Where(i => i.AuctionListingId == a.Id).ToList()
+        }).Where(l => l.Id == request.Id).FirstOrDefaultAsync(cancellationToken);
+        
+        return auction;
+    }
+}
