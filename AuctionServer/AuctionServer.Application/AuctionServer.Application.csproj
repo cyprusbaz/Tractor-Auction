@@ -8,17 +8,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Commands\AuctionItem\" />
-      <Folder Include="Commands\AuctionListing\" />
       <Folder Include="Commands\Bid\" />
       <Folder Include="Commands\Payment\" />
-      <Folder Include="Handlers\AuctionItem\" />
       <Folder Include="Handlers\Bid\" />
       <Folder Include="Handlers\Payment\" />
-      <Folder Include="Queries\AuctionItem\" />
       <Folder Include="Queries\Bid\" />
       <Folder Include="Queries\Payment\" />
-      <Folder Include="Queries\User\" />
     </ItemGroup>
 
     <ItemGroup>

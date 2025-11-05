@@ -9,7 +9,7 @@ namespace AuctionServer.Core.Handlers.AuctionListing;
 public class GetAuctionListingByIdHandler : IRequestHandler<GetAuctionListingByIdQuery, AuctionListingDto>
 {
     
-    AuctionDbContext _context;
+    private AuctionDbContext _context;
 
     public GetAuctionListingByIdHandler(AuctionDbContext context)
     {
