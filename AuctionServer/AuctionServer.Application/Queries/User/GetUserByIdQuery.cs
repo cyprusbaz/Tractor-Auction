@@ -3,4 +3,4 @@ using MediatR;
 
 namespace AuctionServer.Core.Queries.User;
 
-public record GetAllUsersQuery() : IRequest<List<UserDto>>;
+public record GetUserByIdQuery(Guid Id) : IRequest<UserDto>;

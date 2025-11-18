@@ -3,4 +3,4 @@ using MediatR;
 
 namespace AuctionServer.Core.Queries.AuctionListing;
 
-public record GetAuctionListingByIdQuery(Guid Id) : IRequest<AuctionListingDto>;
+public record GetAllAuctionListingsQuery() : IRequest<List<AuctionListingDto>>;

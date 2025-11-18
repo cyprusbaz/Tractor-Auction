@@ -4,6 +4,7 @@ using AuctionServer.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AuctionServer.Infrastructure.Migrations
 {
     [DbContext(typeof(AuctionDbContext))]
-    partial class AuctionDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251105170308_update1")]
+    partial class update1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -61,8 +64,8 @@ namespace AuctionServer.Infrastructure.Migrations
                     b.Property<Guid?>("PaymentId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<float>("Price")
+                        .HasColumnType("real");
 
                     b.Property<int>("Year")
                         .HasColumnType("int");

@@ -6,18 +6,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AuctionServer.Core.Handlers.AuctionItem;
 
-public class GetAllAuctionItemsHandler : IRequestHandler<GetAllAuctionItemsQuery, List<AuctionItemDto>>
+public class GetAuctionItemByIdHandler : IRequestHandler<GetAuctionItemByIdQuery, AuctionItemDto>
 {
     private AuctionDbContext _auctionDbContext;
 
-    public GetAllAuctionItemsHandler(AuctionDbContext auctionDbContext)
+    public GetAuctionItemByIdHandler(AuctionDbContext auctionDbContext)
     {
         _auctionDbContext = auctionDbContext;
     }
 
-    public async Task<List<AuctionItemDto>> Handle(GetAllAuctionItemsQuery request, CancellationToken cancellationToken)
+    public async Task<AuctionItemDto> Handle(GetAuctionItemByIdQuery request, CancellationToken cancellationToken)
     {
-        var auctionItems =  await _auctionDbContext.AuctionItems.Select(a => new AuctionItemDto
+        var item =  await _auctionDbContext.AuctionItems.Select(a => new AuctionItemDto
         {
             Id = a.Id,
             Brand = a.Brand,
@@ -30,8 +30,13 @@ public class GetAllAuctionItemsHandler : IRequestHandler<GetAllAuctionItemsQuery
             Price = a.Price,
             ImageUrl = a.ImageUrl,
             AuctionListingId = a.AuctionListingId,
-        }).AsNoTracking().ToListAsync(cancellationToken);
+        }).FirstOrDefaultAsync(cancellationToken);
+
+        if (item is null)
+        {
+            throw new Exception("This item does not exist");
+        }
         
-        return auctionItems;
+        return item;
     }
 }

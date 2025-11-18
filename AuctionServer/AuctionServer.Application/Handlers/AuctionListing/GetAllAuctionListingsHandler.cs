@@ -6,26 +6,24 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AuctionServer.Core.Handlers.AuctionListing;
 
-public class GetAuctionListingByIdHandler : IRequestHandler<GetAuctionListingByIdQuery, AuctionListingDto>
+public class GetAllAuctionListingsHandler : IRequestHandler<GetAllAuctionListingsQuery, List<AuctionListingDto>>
 {
-    
-    private AuctionDbContext _context;
+    private AuctionDbContext _auctionDbContext;
 
-    public GetAuctionListingByIdHandler(AuctionDbContext context)
+    public GetAllAuctionListingsHandler(AuctionDbContext auctionDbContext)
     {
-        _context = context;
+        _auctionDbContext = auctionDbContext;
     }
 
-    public async Task<AuctionListingDto> Handle(GetAuctionListingByIdQuery request, CancellationToken cancellationToken)
+    public async Task<List<AuctionListingDto>> Handle(GetAllAuctionListingsQuery request, CancellationToken cancellationToken)
     {
-
-        var auction = await _context.AuctionListings.Select(a => new AuctionListingDto
+        var list = await _auctionDbContext.AuctionListings.Select(a => new AuctionListingDto
         {
             Id = a.Id,
             Name = a.Name,
             StartDate = a.StartDate,
             EndDate = a.EndDate,
-            AuctionItems = _context.AuctionItems.Select(ai => new AuctionItemDto
+            AuctionItems = _auctionDbContext.AuctionItems.Select(ai => new AuctionItemDto
             {
                 Brand = ai.Brand,
                 Model = ai.Model,
@@ -37,9 +35,9 @@ public class GetAuctionListingByIdHandler : IRequestHandler<GetAuctionListingByI
                 Price = ai.Price,
                 ImageUrl = ai.ImageUrl,
                 
-            }).Where(i => i.AuctionListingId == a.Id).ToList()
-        }).Where(l => l.Id == request.Id).FirstOrDefaultAsync(cancellationToken);
+            }).Where(i => i.AuctionListingId == a.Id).ToList(),
+        }).ToListAsync(cancellationToken);
         
-        return auction;
+        return list;
     }
 }

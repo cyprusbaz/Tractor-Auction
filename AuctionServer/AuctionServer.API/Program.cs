@@ -1,5 +1,10 @@
+using AuctionServer.Core.Commands.AuctionItem;
+using AuctionServer.Core.Handlers.AuctionItem;
 using AuctionServer.Core.Handlers.User;
+using AuctionServer.Core.Interfaces;
 using AuctionServer.Infrastructure;
+using AuctionServer.Infrastructure.Services;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +23,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AuctionDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<IFileStorageService, FileStorageService>();
 
 builder.Services.AddCors(options =>
 {
@@ -35,12 +41,16 @@ var app = builder.Build();
 
 app.UseCors("AllowFrontend");
 
+app.UseStaticFiles();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+
 
 app.UseHttpsRedirection();
 

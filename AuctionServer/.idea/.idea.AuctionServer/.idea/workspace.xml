@@ -50,9 +50,11 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6207a4895fa34d8ab019915f17a0bbec15200/4f/5e19bf27/IRequestHandler`2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AuctionServer.API/Services/FileStorageService.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="SWEA" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -69,6 +71,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;.NET Launch Settings Profile.AuctionServer.API: IIS Express.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.AuctionServer.API: http.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -81,7 +84,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.AuctionServer.API: IIS Express">
+  <component name="RunManager" selected=".NET Launch Settings Profile.AuctionServer.API: http">
     <configuration name="AuctionServer.API: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/AuctionServer.API/AuctionServer.API.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -278,12 +281,17 @@
       <workItem from="1762264997647" duration="9870000" />
       <workItem from="1762337756578" duration="3227000" />
       <workItem from="1762344190910" duration="3442000" />
+      <workItem from="1762359266947" duration="5456000" />
+      <workItem from="1762385190245" duration="3894000" />
+      <workItem from="1762417629319" duration="1539000" />
+      <workItem from="1762440979348" duration="1057000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
