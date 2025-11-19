@@ -1,0 +1,38 @@
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+    margin-bottom: 50px;
+    border: 2px solid white;
+    padding: 10px 20px;
+    margin-top: 50px;
+    border-radius: 15px;
+}
+.name{
+    text-align: center;
+    margin-top: 20px;
+}
+.body{
+    background-color: #1E1E1E;
+    color: aliceblue;
+}
+input{
+    border-radius: 8px;
+    box-shadow: none;
+}
+.button{
+    border-radius: 10px;
+    background-color: blueviolet;
+    margin-top: 10px;
+}
+.button:hover{
+    opacity: 80%;
+    transition: 0.35 ease;
+}
