@@ -23,7 +23,9 @@ a{
 }
 
 .content{
-    display: inline;
-    flex: 1;
+  display: inline;
+  flex: 1;
+  background-color: #1E1E1E;
+  color: aliceblue;
 }
 

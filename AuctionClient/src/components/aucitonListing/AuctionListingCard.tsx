@@ -1,15 +1,33 @@
+import { RemoveAuctionListing } from "../../api/AuctionListing/RemoveAuctionListing";
 import type { AuctionListing } from "../../types/AuctionListing";
 import styles from "./auctionListing.module.css";
 
 import React from "react";
 
-export const AuctionListingCard: React.FC<AuctionListing> = ({
+interface Props {
+  id: string;
+  name: string;
+  startDate: string;
+  endDate: string;
+  onDelete: (id: string) => void;
+}
+
+export const AuctionListingCard: React.FC<Props> = ({
+  id,
   name,
   startDate,
   endDate,
+  onDelete,
 }) => {
   const start = new Date(startDate);
   const end = new Date(endDate);
+
+  const handleDelete: React.MouseEventHandler<HTMLButtonElement> = (e) => {
+    try {
+      RemoveAuctionListing(id);
+      onDelete(id);
+    } catch {}
+  };
 
   const formatedStart = start.toLocaleDateString(undefined, {
     year: "numeric",
@@ -24,9 +42,14 @@ export const AuctionListingCard: React.FC<AuctionListing> = ({
 
   return (
     <div className={styles.auctionListing}>
-      <h1>{name}</h1>
-      <h2>Start Date: {formatedStart}</h2>
-      <h2>End Date: {formatedEnd}</h2>
+      <span>{name}</span>
+      <span>Start Date: {formatedStart}</span>
+      <span>End Date: {formatedEnd}</span>
+      <button className={styles.view_btn}>All tractors</button>
+      <button className={styles.edit_btn}>Edit</button>
+      <button className={styles.remove_btn} onClick={handleDelete}>
+        Remove
+      </button>
     </div>
   );
 };
