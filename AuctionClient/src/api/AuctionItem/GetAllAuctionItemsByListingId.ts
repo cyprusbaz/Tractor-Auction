@@ -1,9 +1,13 @@
 import { apiClient } from "../AxiosInstace";
 import type { Item } from "../../types/AuctionItem";
 
-export const useGetAllAuctionItems = async (): Promise<Item[]> => {
+export const GetAllAuctionItemsByListingId = async (
+  id: string
+): Promise<Item[]> => {
   try {
-    const res = await apiClient.get("AuctionItem/GetAll");
+    const res = await apiClient.get("AuctionItem/GetByListingId", {
+      params: { listingId: id },
+    });
     console.log(res.data);
     return res.data;
   } catch {

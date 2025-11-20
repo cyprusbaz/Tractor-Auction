@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { RemoveAuctionListing } from "../../api/AuctionListing/RemoveAuctionListing";
 import type { AuctionListing } from "../../types/AuctionListing";
 import styles from "./auctionListing.module.css";
@@ -21,6 +22,7 @@ export const AuctionListingCard: React.FC<Props> = ({
 }) => {
   const start = new Date(startDate);
   const end = new Date(endDate);
+  const navigate = useNavigate();
 
   const handleDelete: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     try {
@@ -45,7 +47,12 @@ export const AuctionListingCard: React.FC<Props> = ({
       <span>{name}</span>
       <span>Start Date: {formatedStart}</span>
       <span>End Date: {formatedEnd}</span>
-      <button className={styles.view_btn}>All tractors</button>
+      <button
+        className={styles.view_btn}
+        onClick={() => navigate(`/AuctionItems/${id}`)}
+      >
+        All tractors
+      </button>
       <button className={styles.edit_btn}>Edit</button>
       <button className={styles.remove_btn} onClick={handleDelete}>
         Remove

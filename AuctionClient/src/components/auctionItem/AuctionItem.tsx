@@ -19,7 +19,7 @@ export const AuctionItem: React.FC<Item> = ({
         {brand} {model}
       </h1>
       <h2>Year: {year.toString()}</h2>
-      <h2>Mileage: {mileage}</h2>
+      <h2>Mileage: {mileage.toString()}</h2>
       <h2>Color: {color}</h2>
       <h2>Engine: {engine}</h2>
       <p>Description: {description}</p>

@@ -40,6 +40,11 @@ export const Navbar = () => {
                 Listings
               </a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/Admin">
+                Admin
+              </a>
+            </li>
           </ul>
         </div>
       </div>
