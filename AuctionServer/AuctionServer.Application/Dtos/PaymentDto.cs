@@ -1,8 +1,8 @@
 using AuctionServer.Domain.Enums;
 
-namespace AuctionServer.Domain.Entities;
+namespace AuctionServer.Core.Dtos;
 
-public class Payment
+public class PaymentDto
 {
     public Guid Id { get; set; }
     public decimal Amount { get; set; }
@@ -10,8 +10,6 @@ public class Payment
     public Status Status { get; set; }
     
     public Guid AuctionItemId { get; set; }
-    public AuctionItem AuctionItem { get; set; }
     
     public Guid UserId { get; set; }
-    public User User { get; set; }
 }

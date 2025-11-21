@@ -1,15 +1,11 @@
-namespace AuctionServer.Domain.Entities;
+namespace AuctionServer.Core.Dtos;
 
-public class Bid
+public class BidDto
 {
     public Guid Id { get; set; }
     public decimal Amount { get; set; }
     public DateTime Timestamp { get; set; }
     public bool isWinner { get; set; }
-    
     public Guid? BidderId { get; set; }
-    public User? Bidder { get; set; }
-    
     public Guid? AuctionItemId { get; set; }
-    public AuctionItem? AuctionItem { get; set; }
 }
