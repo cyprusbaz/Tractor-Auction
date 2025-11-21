@@ -14,7 +14,7 @@ public class AuctionItemController : BaseController
     }
 
     [HttpGet("GetByListingId")]
-    public async Task<IActionResult> GetByListingId([FromQuery]GetAllAuctionItemsQuery query)
+    public async Task<IActionResult> GetByListingId([FromQuery]GetAllAuctionItemsByListingIdQuery query)
     {
         var result = await Mediator.Send(query);
         return Ok(result);
@@ -28,7 +28,7 @@ public class AuctionItemController : BaseController
     }
     
     [HttpPost("Create")]
-    public async Task<IActionResult> CreateAuctionItem(CreateAuctionItemCommand command)
+    public async Task<IActionResult> CreateAuctionItem([FromForm]CreateAuctionItemCommand command)
     {
         var result = await Mediator.Send(command);
         return Ok(result);

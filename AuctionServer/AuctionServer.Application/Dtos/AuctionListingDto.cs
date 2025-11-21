@@ -8,5 +8,4 @@ public class AuctionListingDto
     public string Name { get; set; }
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
-    public ICollection<AuctionItemDto> AuctionItems { get; set; } = new List<AuctionItemDto>();
 }

@@ -19,4 +19,22 @@ public class UserController : BaseController
         var result = await Mediator.Send(query);
         return Ok(result);
     }
+    [HttpGet("GetById")]
+    public async Task<IActionResult> GetAll([FromQuery] GetUserByIdQuery query)
+    {
+        var result = await Mediator.Send(query);
+        return Ok(result);
+    }
+    [HttpDelete("Delete")]
+    public async Task<IActionResult> DeleteUser(DeleteUserCommand command)
+    {
+        var result = await Mediator.Send(command);
+        return Ok(result);
+    }
+    [HttpPut("Update")]
+    public async Task<IActionResult> UpdateUser(UpdateUserCommand command)
+    {
+        var result = await Mediator.Send(command);
+        return Ok(result);
+    }
 }

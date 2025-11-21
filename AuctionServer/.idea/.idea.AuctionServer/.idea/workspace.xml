@@ -19,11 +19,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="402d4230-47b1-4cc9-81d2-087ef1f13400" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../AuctionClient/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../AuctionClient/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuctionClient/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../AuctionClient/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuctionClient/src/App.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../AuctionClient/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../AuctionClient/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuctionClient/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../AuctionClient/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuctionClient/src/api/AuctionItem/DeleteAuctionItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../AuctionClient/src/api/AuctionItem/DeleteAuctionItem.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuctionClient/src/components/ItemForm/ItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../AuctionClient/src/components/ItemForm/ItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuctionClient/src/components/aucitonListing/AuctionListingCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../AuctionClient/src/components/aucitonListing/AuctionListingCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuctionClient/src/components/auctionItem/AuctionItem.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/../AuctionClient/src/components/auctionItem/AuctionItem.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuctionClient/src/components/auctionItem/AuctionItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../AuctionClient/src/components/auctionItem/AuctionItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuctionClient/src/components/navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../AuctionClient/src/components/navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuctionClient/src/pages/Admin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../AuctionClient/src/pages/Admin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuctionClient/src/pages/AuctionItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../AuctionClient/src/pages/AuctionItems.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuctionClient/src/types/AuctionItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../AuctionClient/src/types/AuctionItem.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +55,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6207a4895fa34d8ab019915f17a0bbec15200/4f/5e19bf27/IRequestHandler`2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d56d3de37e59803d15fefbde1e1deb7b45cc3a3d8b10fdf5ef9b471b3fc346d/IRequestHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AuctionServer.API/Services/FileStorageService.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -285,6 +291,9 @@
       <workItem from="1762385190245" duration="3894000" />
       <workItem from="1762417629319" duration="1539000" />
       <workItem from="1762440979348" duration="1057000" />
+      <workItem from="1763466287790" duration="8825000" />
+      <workItem from="1763561216607" duration="7308000" />
+      <workItem from="1763719449303" duration="7141000" />
     </task>
     <servers />
   </component>

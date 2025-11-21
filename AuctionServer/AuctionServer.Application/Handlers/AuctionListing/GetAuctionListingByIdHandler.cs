@@ -25,19 +25,6 @@ public class GetAuctionListingByIdHandler : IRequestHandler<GetAuctionListingByI
             Name = a.Name,
             StartDate = a.StartDate,
             EndDate = a.EndDate,
-            AuctionItems = _context.AuctionItems.Select(ai => new AuctionItemDto
-            {
-                Brand = ai.Brand,
-                Model = ai.Model,
-                Year = ai.Year,
-                Mileage = ai.Mileage,
-                Color = ai.Color,
-                Engine = ai.Engine,
-                Description = ai.Description,
-                Price = ai.Price,
-                ImageUrl = ai.ImageUrl,
-                
-            }).Where(i => i.AuctionListingId == a.Id).ToList()
         }).Where(l => l.Id == request.Id).FirstOrDefaultAsync(cancellationToken);
         
         return auction;
