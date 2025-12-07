@@ -32,6 +32,7 @@ public class UpdateAuctionItemDtoHandler : IRequestHandler<UpdateAuctionItemComm
         item.Color = request.Color;
         item.Engine = request.Engine;
         item.Description = request.Description;
+        item.Attachment = request.Attachment;
         item.Price = request.Price;
         item.AuctionListingId = request.AuctionListingId;
         

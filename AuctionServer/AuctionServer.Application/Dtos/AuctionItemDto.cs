@@ -10,6 +10,7 @@ public class AuctionItemDto
     public string Color { get; set; }
     public string Engine { get; set; }
     public string Description { get; set; }
+    public string Attachment {get; set;}
     public decimal Price { get; set; }
     public string ImageUrl { get; set; }
     public Guid AuctionListingId { get; set; }

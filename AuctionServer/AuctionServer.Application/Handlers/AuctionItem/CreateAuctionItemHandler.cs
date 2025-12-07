@@ -36,6 +36,7 @@ public class CreateAuctionItemHandler : IRequestHandler<CreateAuctionItemCommand
             Color = request.Color,
             Engine = request.Engine,
             Description = request.Description,
+            Attachment = request.Attachment,
             Price = request.Price,
             ImageUrl = imageUrl,
             AuctionListingId = request.AuctionListingId,

@@ -34,6 +34,7 @@ public class GetAllAuctionItemsByListingIdHandler : IRequestHandler<GetAllAuctio
             Color = i.Color,
             Engine = i.Engine,
             Description = i.Description,
+            Attachment = i.Attachment,
             Price = i.Price,
             ImageUrl = i.ImageUrl,
             AuctionListingId = i.AuctionListingId,
