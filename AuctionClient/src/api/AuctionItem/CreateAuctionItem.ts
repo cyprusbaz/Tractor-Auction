@@ -12,6 +12,7 @@ export const UploadAuctionItem = async (item: UploadItem) => {
     formData.append("color", item.color);
     formData.append("engine", item.engine);
     formData.append("description", item.description);
+    formData.append("attachment", item.attachment);
     formData.append("price", String(item.price));
     if (item.image) {
       formData.append("image", item.image);

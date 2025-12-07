@@ -12,6 +12,10 @@ export const AuctionItems = () => {
   const { listingId } = useParams();
   const navigate = useNavigate();
 
+  const handleDelete = (id: string) => {
+    setItems((prev) => prev.filter((item) => item.id !== id));
+  };
+
   useEffect(() => {
     const fetchItems = async () => {
       try {
@@ -45,7 +49,15 @@ export const AuctionItems = () => {
           </button>
           <div className={styles.auctionList}>
             {items.length > 0 ? (
-              items.map((item) => <AuctionItem key={item.id} {...item} />)
+              items
+                .filter((item): item is Item & { id: string } => !!item.id)
+                .map((item) => (
+                  <AuctionItem
+                    key={item.id}
+                    {...item}
+                    onDelete={handleDelete}
+                  />
+                ))
             ) : (
               <p>Loading tractors...</p>
             )}

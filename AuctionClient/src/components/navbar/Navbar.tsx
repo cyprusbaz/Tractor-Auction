@@ -45,7 +45,20 @@ export const Navbar = () => {
                 Admin
               </a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/Bidding">
+                Bid
+              </a>
+            </li>
           </ul>
+          <div className="ms-auto d-flex">
+            <a href="/Register" className="btn btn-outline-primary me-2">
+              Register
+            </a>
+            <a href="/Login" className="btn btn-primary">
+              Login
+            </a>
+          </div>
         </div>
       </div>
     </nav>

@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { RemoveAuctionListing } from "../../api/AuctionListing/RemoveAuctionListing";
 import type { AuctionListing } from "../../types/AuctionListing";
 import styles from "./auctionListing.module.css";
-
 import React from "react";
 
 interface Props {
@@ -42,6 +41,9 @@ export const AuctionListingCard: React.FC<Props> = ({
     day: "numeric",
   });
 
+  const handleEdit = () => {
+    navigate(`/EditListing/${id}`);
+  };
   return (
     <div className={styles.auctionListing}>
       <span>{name}</span>
@@ -53,7 +55,9 @@ export const AuctionListingCard: React.FC<Props> = ({
       >
         All tractors
       </button>
-      <button className={styles.edit_btn}>Edit</button>
+      <button className={styles.edit_btn} onClick={handleEdit}>
+        Edit
+      </button>
       <button className={styles.remove_btn} onClick={handleDelete}>
         Remove
       </button>

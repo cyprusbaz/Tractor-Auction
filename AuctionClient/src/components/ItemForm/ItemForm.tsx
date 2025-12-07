@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./ItemForm.module.css";
 import { type UploadItem } from "../../types/AuctionItem";
 import { UploadAuctionItem } from "../../api/AuctionItem/CreateAuctionItem";
+import { GetAllAuctionListings } from "../../api/AuctionListing/GetAllAuctionListings";
+import { useNavigate } from "react-router-dom";
+import type { AuctionListing } from "../../types/AuctionListing";
 
 export const ItemForm = () => {
+  const navigate = useNavigate();
+
+  const [listings, setListings] = useState<AuctionListing[]>([]);
+
   const [form, setForm] = useState<UploadItem>({
     brand: "",
     model: "",
@@ -12,16 +19,22 @@ export const ItemForm = () => {
     color: "",
     engine: "",
     description: "",
+    attachment: "",
     price: 0,
     image: null,
-    auctionListingId: "77E7F2FE-7A76-4977-9EB6-087238EC2F59",
+    auctionListingId: "",
   });
 
+  useEffect(() => {
+    GetAllAuctionListings().then(setListings).catch(console.error);
+  }, []);
+
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value, type } = e.target;
-
     setForm((prev) => ({
       ...prev,
       [name]: type === "number" ? Number(value) : value,
@@ -35,60 +48,46 @@ export const ItemForm = () => {
 
   const handleUpload = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(form);
     try {
       await UploadAuctionItem(form);
-
-      setForm({
-        brand: "",
-        model: "",
-        year: 1900,
-        mileage: 0,
-        color: "",
-        engine: "",
-        description: "",
-        price: 0,
-        image: null,
-        auctionListingId: "77e7f2fe-7a76-4977-9eb6-087238ec2f59",
-      });
+      navigate("/AuctionItems");
     } catch {
       console.log("Failed to upload tractor");
     }
   };
+
   return (
     <div className={styles.form}>
-      <form
-        action="#"
-        method="POST"
-        encType="multipart/form-data"
-        onSubmit={handleUpload}
-      >
+      <form onSubmit={handleUpload} encType="multipart/form-data">
         <h2 className={styles.name}>Upload Tractor to Auction</h2>
 
-        <label htmlFor="brand">Brand:</label>
-        <input
-          type="text"
-          id="brand"
-          name="brand"
-          placeholder="e.g., Lamborghini"
+        <label htmlFor="auctionListingId">Select Auction Listing:</label>
+        <select
+          id="auctionListingId"
+          name="auctionListingId"
           required
+          value={form.auctionListingId}
           onChange={handleChange}
-        />
+        >
+          <option value="">-- Choose listing --</option>
+
+          {listings.map((listing) => (
+            <option key={listing.id} value={listing.id}>
+              {listing.name}
+            </option>
+          ))}
+        </select>
+
+        {/* rest of the form: */}
+        <label htmlFor="brand">Brand:</label>
+        <input type="text" name="brand" required onChange={handleChange} />
 
         <label htmlFor="model">Model:</label>
-        <input
-          type="text"
-          id="model"
-          name="model"
-          placeholder="e.g., Trattori"
-          required
-          onChange={handleChange}
-        />
+        <input type="text" name="model" required onChange={handleChange} />
 
         <label htmlFor="year">Year:</label>
         <input
           type="number"
-          id="year"
           name="year"
           min="1900"
           max="2025"
@@ -97,59 +96,40 @@ export const ItemForm = () => {
         />
 
         <label htmlFor="mileage">Mileage (km):</label>
-        <input
-          type="number"
-          id="mileage"
-          name="mileage"
-          required
-          onChange={handleChange}
-        />
+        <input type="number" name="mileage" required onChange={handleChange} />
 
         <label htmlFor="color">Color:</label>
-        <input
-          type="text"
-          id="color"
-          name="color"
-          required
-          onChange={handleChange}
-        />
+        <input type="text" name="color" required onChange={handleChange} />
 
         <label htmlFor="engine">Engine:</label>
-        <input
-          type="text"
-          id="engine"
-          name="engine"
-          required
-          onChange={handleChange}
-        />
+        <input type="text" name="engine" required onChange={handleChange} />
 
         <label htmlFor="description">Description:</label>
         <textarea
-          id="description"
           name="description"
           rows={4}
-          placeholder="Add any details about the car..."
+          required
+          onChange={handleChange}
+        ></textarea>
+
+        <label htmlFor="description">Attachment:</label>
+        <textarea
+          name="attachment"
+          rows={4}
           required
           onChange={handleChange}
         ></textarea>
 
         <label htmlFor="price">Starting Price ($):</label>
-        <input
-          type="number"
-          id="price"
-          name="price"
-          required
-          onChange={handleChange}
-        />
+        <input type="number" name="price" required onChange={handleChange} />
 
-        <label htmlFor="images">Upload Images:</label>
+        <label htmlFor="image">Upload Image:</label>
         <input
           type="file"
-          id="image"
           name="image"
           accept="image/*"
-          onChange={handleFile}
           required
+          onChange={handleFile}
         />
 
         <button type="submit" className={styles.button}>

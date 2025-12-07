@@ -9,6 +9,8 @@
   align-items: center;
   justify-content: center;
   width: auto;
+  max-width: 1000px;
+  width: 100%;
 }
 
 .auctionListing span:first-of-type {
